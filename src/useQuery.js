@@ -22,9 +22,9 @@ export default function useQuery(resource) {
         if (!response.ok) throw Error(`Could not query ${resource}.`);
         const result = await response.json();
         setData(result.data);
-      } catch (e) {
-        console.error(e);
-        setError(e.message);
+      } catch (err) {
+        console.error(err);
+        setError(err.message);
       }
     };
     query();
